@@ -1,8 +1,8 @@
 import os
 import openai
-
-
-openai.api_key = os.API_KEY
+from dotenv import load_dotenv
+load_dotenv()
+openai.api_key = os.getenv('API_KEY')
 messages = []
 system_msg = input("What type of chatbot would you like to create?\n")
 messages.append({"role": "system", "content": system_msg})

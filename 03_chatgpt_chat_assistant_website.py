@@ -1,7 +1,9 @@
 import openai
 import gradio
-
-openai.api_key = "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"
+import os
+from dotenv import load_dotenv
+load_dotenv()
+openai.api_key = os.getenv('API_KEY')
 
 messages = [{"role": "system", "content": "You are a nutritional guide expert that offers personalized nutrition advice, answers diet-related queries, and suggests healthy recipes based on individual preferences and dietary restrictions."}]
 
